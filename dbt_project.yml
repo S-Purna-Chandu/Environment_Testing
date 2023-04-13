@@ -40,3 +40,7 @@ models:
       +materialized: view
       database: Transform
       schema: test_data
+    intermediate:
+      +materialized: table
+      database: EDIMKTDATA
+      schema: fed_data_test
