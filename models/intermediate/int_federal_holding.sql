@@ -1,0 +1,23 @@
+SELECT
+    ROW_NUMBER() OVER(ORDER BY As_Of_Date) AS ID,
+    As_Of_Date,
+    CUSIP,
+    Security_Type,
+    Security_Description,
+    Term,
+    Maturity_Date,
+    Issuer,
+    Spread_Pct,
+    Coupon_Pct,
+    Current_Face_Value,
+    Par_Value,
+    Inflation_Compensation,
+    Percent_Outstanding,
+    Change_From_Prior_Week,
+    Change_From_Prior_Year,
+    is_Aggregated,
+    CURRENT_TIMESTAMP() as Created_Date,
+    CURRENT_USER() as Created_By,
+    CURRENT_TIMESTAMP() as Modified_Date,
+    CURRENT_USER() as Modified_By
+FROM {{ ref('stg_federal_holding') }}
