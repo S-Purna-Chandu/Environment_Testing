@@ -39,4 +39,4 @@ models:
     staging:
       +materialized: view
       database: Transform
-      schema: data_test
+      schema: test_data
