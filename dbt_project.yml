@@ -32,6 +32,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
+  +transient: false
   Environment_Testing:
     # Applies to all files under models/example/
     example:
@@ -41,6 +42,10 @@ models:
       database: Transform
       schema: test_data
     intermediate:
+      +materialized: table
+      database: EDIMKTDATA
+      schema: fed_data_test
+    custom_branch:
       +materialized: table
       database: EDIMKTDATA
       schema: fed_data_test

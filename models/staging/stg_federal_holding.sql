@@ -1,4 +1,4 @@
-{{ config(database='raw', schema='jaffle_shop') }}
+
 
 {% set table_name = '@FED_DATA/fed_holdings.csv' %}
 
@@ -19,4 +19,4 @@ SELECT
     t.$14 AS Change_From_Prior_Week,
     t.$15 AS Change_From_Prior_Year,
     t.$16 AS is_Aggregated
-FROM {{table_name}} (file_format => CSV_FILE_FORMAT) t
+FROM @{{source('RAW','FED_DATA/fed_holdings.csv')}} (file_format => CSV_FILE_FORMAT) t

@@ -12,3 +12,10 @@ sources:
     schema: stripe
     tables:
       - name: payment
+  - name: RAW
+    description: Raw data on FED holdings
+    database: RAW
+    schema: jaffle_shop
+    tables:
+      - name: FED_DATA/fed_holdings.csv
+        description: FED holdings data in CSV format

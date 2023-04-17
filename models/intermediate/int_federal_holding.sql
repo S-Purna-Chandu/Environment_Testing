@@ -20,4 +20,4 @@ SELECT
     CURRENT_USER() as Created_By,
     CURRENT_TIMESTAMP() as Modified_Date,
     CURRENT_USER() as Modified_By
-FROM {{ ref('stg_federal_holding') }}
+FROM raw.jaffle_shop.stg_federal_holding
